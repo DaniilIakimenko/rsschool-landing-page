@@ -437,6 +437,13 @@ h3 {
 }
 
 @media (max-width: 767px) {
+  :root {
+    --fs-heading-1: 52px;
+    --lh-heading-1: 1.1;
+
+    --fs-heading-2: 44px;
+    --lh-heading-2: 1.25;
+  }
   .container {
     padding: 0 16px;
   }

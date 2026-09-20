@@ -20,8 +20,102 @@
   <div id="header-placeholder"></div>
 
   <main>
-    <div class="container">
-    </div>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__inner">
+          <div class="hero__content">
+            <h1 class="hero__title">
+              <span class="hero__title-accent">Enjoy</span> premium coffee at our charming cafe
+            </h1>
+
+            <p class="hero__text">
+              With its inviting atmosphere and delicious coffee options, the Coffee House Resource is a popular
+              destination for coffee lovers and those seeking a warm and inviting space to enjoy their favorite
+              beverage.
+            </p>
+
+            <a href="catalog.html" class="hero__btn">
+              <span>Menu</span>
+              <svg class="hero__btn-icon" width="20" height="20" aria-hidden="true">
+                <use href="#coffee-cup"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="favorite" id="favorite">
+      <div class="container">
+        <h2 class="favorite__title">
+          Choose your <span class="favorite__title-accent">favorite</span> coffee
+        </h2>
+
+        <div class="favorite__slider">
+          <button class="favorite__arrow favorite__arrow--prev" type="button" aria-label="Previous drink">
+            <svg width="24" height="24" aria-hidden="true">
+              <use href="#arrow-right"></use>
+            </svg>
+          </button>
+
+          <div class="favorite__slide">
+            <img class="favorite__image" src="assets/images/coffee-slider-1.webp" alt="S'mores Frappuccino" width="250"
+              height="500">
+
+            <h3 class="favorite__name">S'mores Frappuccino</h3>
+
+            <p class="favorite__desc">
+              This new drink takes an espresso and mixes it with brown sugar and cinnamon before being topped with oat
+              milk.
+            </p>
+
+            <p class="favorite__price">$5.50</p>
+          </div>
+
+          <button class="favorite__arrow favorite__arrow--next" type="button" aria-label="Next drink">
+            <svg width="24" height="24" aria-hidden="true">
+              <use href="#arrow-right"></use>
+            </svg>
+          </button>
+
+        </div>
+
+        <ul class="favorite__dots">
+          <li class="favorite__dot favorite__dot--active"></li>
+          <li class="favorite__dot"></li>
+          <li class="favorite__dot"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="about__title">
+          Resource is <span class="about__title-accent">the perfect and cozy place</span> where you can enjoy a variety
+          of hot beverages, relax, catch up with friends, or get some work done.
+        </h2>
+
+        <div class="about__gallery">
+          <div class="about__column">
+            <div class="about__item about__item--1">
+              <img class="about__img" src="assets/images/about-1.webp" alt="Девушка с чашкой кофе">
+            </div>
+            <div class="about__item about__item--3">
+              <img class="about__img" src="assets/images/about-3.webp" alt="Кофе на столике">
+            </div>
+          </div>
+
+          <div class="about__column">
+            <div class="about__item about__item--2">
+              <img class="about__img" src="assets/images/about-2.webp" alt="Мужчина с чашкой кофе">
+            </div>
+            <div class="about__item about__item--4">
+              <img class="about__img" src="assets/images/about-4.webp" alt="Пара с кофе">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <div id="footer-placeholder"></div>
