@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee House Menu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+  <div id="sprite-placeholder"></div>
+
+  <div id="header-placeholder"></div>
+
+  <main>
+    <section class="catalog" id="catalog">
+      <div class="container">
+        <h1 class="catalog__title">
+          Behind each of our cups hides an <span class="catalog__title-accent">amazing surprise</span>
+        </h1>
+
+        <div class="catalog__tabs">
+          <button class="catalog__tab catalog__tab--active" type="button">
+            <span class="catalog__tab-icon">☕</span>
+            <span>Coffee</span>
+          </button>
+
+          <button class="catalog__tab" type="button">
+            <span class="catalog__tab-icon">🫖</span>
+            <span>Tea</span>
+          </button>
+
+          <button class="catalog__tab" type="button">
+            <span class="catalog__tab-icon">🍰</span>
+            <span>Dessert</span>
+          </button>
+        </div>
+
+        <div class="catalog__grid">
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-irish.webp" alt="Irish coffee">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Irish coffee</h2>
+              <p class="catalog-card__desc">Fragrant black coffee with Jameson Irish whiskey and whipped milk</p>
+              <p class="catalog-card__price">$7.00</p>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-kahlua.webp" alt="Kahlua coffee">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Kahlua coffee</h2>
+              <p class="catalog-card__desc">Classic coffee with milk and Kahlua liqueur under a cap of frosted milk</p>
+              <p class="catalog-card__price">$7.00</p>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-honey-raf.webp" alt="Honey raf">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Honey raf</h2>
+              <p class="catalog-card__desc">Espresso with frothed milk, cream and aromatic honey</p>
+              <p class="catalog-card__price">$5.50</p>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-ice-cappuccino.webp" alt="Ice cappuccino">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Ice cappuccino</h2>
+              <p class="catalog-card__desc">Cappuccino with soft thick foam in summer version with ice</p>
+              <p class="catalog-card__price">$5.00</p>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-espresso.webp" alt="Espresso">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Espresso</h2>
+              <p class="catalog-card__desc">Classic black coffee</p>
+              <p class="catalog-card__price">$4.50</p>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-latte.webp" alt="Latte">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Latte</h2>
+              <p class="catalog-card__desc">Espresso coffee with the addition of steamed milk and dense milk foam</p>
+              <p class="catalog-card__price">$5.50</p>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-latte-macchiato.webp" alt="Latte macchiato">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Latte macchiato</h2>
+              <p class="catalog-card__desc">Espresso with frothed milk and chocolate</p>
+              <p class="catalog-card__price">$5.50</p>
+            </div>
+          </article>
+
+          <article class="catalog-card">
+            <div class="catalog-card__media">
+              <img class="catalog-card__img" src="assets/images/coffee-with-cognac.webp" alt="Coffee with cognac">
+            </div>
+
+            <div class="catalog-card__body">
+              <h2 class="catalog-card__title">Coffee with cognac</h2>
+              <p class="catalog-card__desc">Fragrant black coffee with cognac and whipped cream</p>
+              <p class="catalog-card__price">$6.50</p>
+            </div>
+          </article>
+        </div>
+
+        <button class="catalog__load-more" type="button" aria-label="Show more">
+          <svg width="24" height="24" aria-hidden="true">
+            <use href="#load-more"></use>
+          </svg>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-placeholder"></div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
