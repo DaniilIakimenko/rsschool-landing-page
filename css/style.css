@@ -1,4 +1,5 @@
 :root {
+  /* --- Fonts --- */
   --font-family-base: 'Inter', sans-serif;
 
   --fs-heading-1: 72px;
@@ -28,9 +29,8 @@
   --fs-burger-link: 32px;
   --lh-burger-link: 1.25;
   --fw-burger-link: 600;
-}
 
-:root {
+  /* --- Colors --- */
   --color-text-primary: #403F3D;
   --color-text-inverse: #E1D4C9;
   --color-text-accent: #B0907A;
@@ -57,6 +57,10 @@
 }
 
 /* --- Base Styles ---*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-family-base);
   font-size: var(--fs-body);
