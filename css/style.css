@@ -19,6 +19,7 @@
 
   --fs-caption: 10px;
   --lh-caption: 1.4;
+  --fw-caption: 600;
 
   --fs-action: 16px;
   --lh-action: 1.5;
@@ -27,16 +28,6 @@
   --fs-burger-link: 32px;
   --lh-burger-link: 1.25;
   --fw-burger-link: 600;
-}
-
-@media (max-width: 767px) {
-  :root {
-    --fs-heading-1: 42px;
-    --lh-heading-1: 1.15;
-
-    --fs-heading-2: 32px;
-    --lh-heading-2: 1.25;
-  }
 }
 
 :root {
@@ -176,9 +167,9 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  width: 88px;
-  height: 44px;
-  padding: 4px;
+  width: 104px;
+  height: 52px;
+  padding: 3px;
   border: 1px solid var(--color-border-primary);
   border-radius: 100px;
   background-color: transparent;
@@ -190,8 +181,8 @@ h3 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background-color: transparent;
   transition: background-color 0.5s ease, color 0.5s ease;
@@ -255,6 +246,38 @@ h3 {
   display: block;
   flex-shrink: 0;
   color: var(--color-text-primary);
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--color-text-primary);
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: border-color 0.25s ease;
+}
+
+.burger span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background-color: var(--color-text-primary);
+  transition: background-color 0.25s ease;
+}
+
+.burger:hover {
+  border-color: var(--color-text-accent);
+}
+
+.burger:hover span {
+  background-color: var(--color-text-accent);
 }
 
 /* --- Footer --- */
@@ -382,4 +405,55 @@ h3 {
   display: block;
   flex-shrink: 0;
   color: var(--color-text-inverse);
+}
+
+@media (max-width: 1023px) {
+  .nav {
+    display: none;
+  }
+
+  .menu-link {
+    display: none;
+  }
+
+  .burger {
+    display: flex;
+  }
+
+  .site-header__actions {
+    gap: 16px;
+  }
+
+  .site-footer__inner {
+    flex-direction: column;
+    gap: 100px;
+
+    padding: 100px 60px;
+  }
+
+  .site-footer__main {
+    max-width: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .site-footer__inner {
+    gap: 40px;
+
+    padding: 60px 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  :root {
+    --fs-heading-1: 42px;
+    --lh-heading-1: 1.15;
+
+    --fs-heading-2: 32px;
+    --lh-heading-2: 1.25;
+  }
 }
