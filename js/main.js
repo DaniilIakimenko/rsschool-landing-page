@@ -31,6 +31,35 @@ function initThemeToggle() {
   });
 }
 
+/* --- Mob menu toggle --- */
+function initMobileMenu() {
+  const burger = document.querySelector('.burger');
+  const menu = document.querySelector('.mob-nav');
+  if (!burger || !menu) return;
+
+  const closeMenu = () => {
+    menu.classList.remove('is-open');
+    burger.classList.remove('is-active');
+    burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+
+  burger.addEventListener('click', () => {
+    const isOpen = menu.classList.toggle('is-open');
+    burger.classList.toggle('is-active', isOpen);
+    burger.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('menu-open', isOpen);
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
   await Promise.all([
     loadComponent("#sprite-placeholder", "components/sprite.html").catch(
@@ -45,4 +74,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   ]);
 
   initThemeToggle();
+  initMobileMenu();
 });
