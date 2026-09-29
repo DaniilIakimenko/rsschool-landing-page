@@ -304,7 +304,7 @@ h3 {
 .burger span {
   display: block;
   width: 20px;
-  height: 1.5px;
+  height: 2px;
   background-color: var(--color-text-primary);
   transition: transform 0.3s ease, background-color 0.25s ease;
 }
@@ -318,11 +318,11 @@ h3 {
 }
 
 .burger.is-active span:nth-child(1) {
-  transform: translateY(3.75px) rotate(45deg);
+  transform: translateY(4px) rotate(45deg);
 }
 
 .burger.is-active span:nth-child(2) {
-  transform: translateY(-3.75px) rotate(-45deg);
+  transform: translateY(-4px) rotate(-45deg);
 }
 
 @media (min-width: 769px) and (max-width: 1023px) {
