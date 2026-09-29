@@ -5,6 +5,7 @@ const modal = document.querySelector('.modal');
 const modalInner = document.querySelector('.modal__content');
 
 let products = [];
+let currentProduct = null;
 
 async function init() {
   const response = await fetch('data/products.json');
@@ -25,15 +26,46 @@ async function init() {
 
   grid.addEventListener('click', (e) => {
     const card = e.target.closest('.catalog-card');
+    if (!card) return;
+
     renderModal(card.dataset.id);
 
     modal.classList.add('is-open');
+    modal.ariaHidden = 'false';
     document.body.classList.add('modal-open');
   });
 
   load.addEventListener('click', () => {
     grid.classList.add('is-expanded');
     load.classList.add('is-hidden');
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal || e.target.closest('.modal__close')) closeModal();
+  });
+
+  modalInner.addEventListener('click', (e) => {
+    const option = e.target.closest('.modal__option');
+    if (!option) return;
+
+    if (option.dataset.sizeCode) {
+      const allSizes = modalInner.querySelectorAll('[data-size-code]');
+
+      allSizes.forEach(s => s.classList.remove('modal__option--active'));
+      option.classList.add('modal__option--active');
+
+      updateTotal();
+    }
+
+    if (option.dataset.addPrice) {
+      option.classList.toggle('modal__option--active');
+
+      updateTotal();
+    }
   });
 }
 
@@ -76,6 +108,7 @@ function renderCategory(category) {
 
 function renderModal(id) {
   const product = products.find((obj) => obj.id === Number(id));
+  currentProduct = product;
 
   const sizesHTML = Object.entries(product.sizes)
     .map(([code, data], index) => `
@@ -133,12 +166,23 @@ function renderModal(id) {
 
   modalInner.innerHTML = modalHTML;
 
-  const modalClose = document.querySelector('.modal__close');
+  updateTotal();
+}
 
-  modalClose.addEventListener('click', () => {
-    modal.classList.remove('is-open');
-    document.body.classList.remove('modal-open');
-  });
+const closeModal = () => {
+  modal.classList.remove('is-open');
+  modal.ariaHidden = 'true';
+  document.body.classList.remove('modal-open');
+};
+
+const updateTotal = () => {
+  const sizePrice = Number(modalInner.querySelector('[data-size-code].modal__option--active').dataset.sizePrice);
+  const additivesPrice = [...modalInner.querySelectorAll('[data-add-price].modal__option--active')]
+    .reduce((sum, item) => sum + Number(item.dataset.addPrice), 0);
+  
+  const total = Number(currentProduct.price) + sizePrice + additivesPrice;
+
+  modalInner.querySelector('.modal__total-price').textContent = `$${total.toFixed(2)}`;
 }
 
 init();
