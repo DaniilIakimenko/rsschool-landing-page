@@ -58,6 +58,10 @@ function initMobileMenu() {
   menu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', closeMenu);
   });
+
+  window.addEventListener('resize', () => {
+    if (menu.classList.contains('is-open') && (window.innerWidth > 768)) closeMenu();
+  });
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
